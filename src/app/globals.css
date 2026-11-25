@@ -1,3 +1,10 @@
 @import "tailwindcss";
 
 body { @apply bg-slate-50 text-slate-900 antialiased; }
+
+@theme {
+  --color-forest-50: #eef5ef;
+  --color-forest-300: #8db394;
+  --color-forest-600: #2f6b3f;
+  --color-forest-700: #25552f;
+}

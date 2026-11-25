@@ -99,13 +99,13 @@ export function Workspace({ id }: { id: string }) {
               <button key={s.id} onClick={() => setActiveId(s.id)} aria-current={s.id === active.id}
                 className={cn("mb-1 flex w-full items-center gap-2 rounded-md px-3 py-2 text-left text-sm hover:bg-slate-100",
                   s.id === active.id && "bg-indigo-50 font-medium text-indigo-900",
-                  ss.completed && "text-emerald-700")}>
-                {ss.completed ? <CheckCircle2 size={16} className="shrink-0 text-emerald-600" /> : <Circle size={16} className="shrink-0 text-slate-400" />}
+                  ss.completed && "text-forest-700")}>
+                {ss.completed ? <CheckCircle2 size={16} className="shrink-0 text-forest-600" /> : <Circle size={16} className="shrink-0 text-slate-400" />}
                 <span className="flex-1 truncate">{s.name}</span>
                 <span className="text-right text-xs text-slate-500">
                   {ss.asked}/{ss.total}
                   {ss.completed && sectionCompletedAtMs(iv, s.id) !== undefined && (
-                    <span className="block font-mono text-emerald-700">{formatElapsed(sectionCompletedAtMs(iv, s.id)!)}</span>
+                    <span className="block font-mono text-forest-700">{formatElapsed(sectionCompletedAtMs(iv, s.id)!)}</span>
                   )}
                 </span>
               </button>
@@ -126,7 +126,7 @@ export function Workspace({ id }: { id: string }) {
             </div>
             {cur.completed ? (
               <div className="flex items-center gap-3">
-                <span className="inline-flex items-center gap-1 font-medium text-emerald-700" data-testid="section-complete-stamp">
+                <span className="inline-flex items-center gap-1 font-medium text-forest-700" data-testid="section-complete-stamp">
                   <Check size={18} /> Section Complete
                   {sectionCompletedAtMs(iv, active.id) !== undefined && (
                     <span className="ml-1 font-mono text-sm font-normal">at {formatElapsed(sectionCompletedAtMs(iv, active.id)!)}</span>
@@ -143,11 +143,11 @@ export function Workspace({ id }: { id: string }) {
               const pq = iv.progress.questions[q.id];
               const asked = !!pq?.asked;
               return (
-                <div key={q.id} className={cn("rounded-lg border bg-white p-4 shadow-sm transition-colors", asked ? "border-emerald-300 bg-emerald-50" : "border-slate-200")}>
+                <div key={q.id} className={cn("rounded-lg border bg-white p-4 shadow-sm transition-colors", asked ? "border-forest-300 bg-forest-50" : "border-slate-200")}>
                   <div data-card role="checkbox" aria-checked={asked} tabIndex={0}
                     onClick={() => toggleQuestion(id, q.id)} onKeyDown={(e) => onCardKey(e, q.id)}
                     className="flex cursor-pointer items-start gap-3 rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-600">
-                    <span className={cn("mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border", asked ? "border-emerald-600 bg-emerald-600 text-white" : "border-slate-400")}>
+                    <span className={cn("mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border", asked ? "border-forest-600 bg-forest-600 text-white" : "border-slate-400")}>
                       {asked && <Check size={14} />}
                     </span>
                     <span className={cn("flex-1", asked && "text-slate-600")}>{q.text}</span>

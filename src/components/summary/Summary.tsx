@@ -38,7 +38,7 @@ export function Summary({ id }: { id: string }) {
         <section key={s.id} className="mb-5">
           <h2 className="mb-2 font-semibold">{s.name}
             {sectionCompletedAtMs(iv, s.id) !== undefined && (
-              <span className="ml-2 text-sm font-normal text-emerald-700">
+              <span className="ml-2 text-sm font-normal text-forest-700">
                 completed at <span className="font-mono">{formatElapsed(sectionCompletedAtMs(iv, s.id)!)}</span>
                 {iv.progress.sections[s.id]?.completedAt && ` (${clockTime(iv.progress.sections[s.id].completedAt!)})`}
               </span>
@@ -49,7 +49,7 @@ export function Summary({ id }: { id: string }) {
               const pq = iv.progress.questions[q.id];
               return (
                 <li key={q.id} className="flex items-start gap-2 text-sm">
-                  {pq?.asked ? <Check size={16} className="mt-0.5 text-emerald-600" aria-label="Asked" /> : <Square size={16} className="mt-0.5 text-red-500" aria-label="Not asked" />}
+                  {pq?.asked ? <Check size={16} className="mt-0.5 text-forest-600" aria-label="Asked" /> : <Square size={16} className="mt-0.5 text-red-500" aria-label="Not asked" />}
                   <span className={pq?.asked ? "" : "text-red-700"}>{q.text}
                     {pq?.note && <em className="block text-slate-500">Note: {pq.note}</em>}</span>
                 </li>
