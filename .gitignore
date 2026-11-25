@@ -1,0 +1,10 @@
+.next
+node_modules
+*.tsbuildinfo
+next-env.d.ts
+.vercel
+.claude
+.DS_Store
+.env*
+.vercel
+samples/*.docx

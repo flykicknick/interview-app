@@ -1,0 +1,13 @@
+[Introduction]
+Objective: Build rapport and understand the participant's context.
+Tell me about your role?
+How long have you been using our product?
+
+[Current Process]
+Objective: Map today's workflow and where it breaks down.
+Walk me through your current workflow.
+What tools do you use today?
+What frustrates you most?
+
+[Future State]
+What would an ideal solution look like?
